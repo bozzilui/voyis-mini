@@ -1,0 +1,54 @@
+{
+  "name": "data-visualization",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/icons-material": "^6.4.1",
+    "@mui/material": "^6.4.1",
+    "@reduxjs/toolkit": "^2.5.0",
+    "cra-template": "1.2.0",
+    "csv-parser": "^3.1.0",
+    "leaflet": "^1.9.4",
+    "leaflet-extra-markers": "^1.2.2",
+    "pcl.js": "^1.16.0",
+    "potree-core": "^2.0.10",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-pro-sidebar": "^1.1.0",
+    "react-redux": "^9.2.0",
+    "react-router-dom": "^7.1.3",
+    "react-scripts": "5.0.1",
+    "three": "^0.172.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.5.1",
+    "tailwindcss": "^3.4.17"
+  }
+}
