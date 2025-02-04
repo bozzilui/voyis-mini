@@ -23,24 +23,25 @@ const Dashboard = () => {
     const reader = new FileReader();
     const loader = new PCDLoader();
 
-    // Calculate file size in MB
-    const fileSizeMB = (file.size / (1024 * 1024)).toFixed(2);
+    // Calculate file size in MB or KB
+    const fileSizeInMB = file.size / (1024 * 1024);
+    const fileSizeString =
+      fileSizeInMB < 1
+        ? `${(file.size / 1024).toFixed(2)} KB`
+        : `${fileSizeInMB.toFixed(2)} MB`;
 
     if (file.name.endsWith(".xyz") || file.name.endsWith(".pcd")) {
       reader.onload = () => {
         if (file.name.endsWith(".pcd")) {
           loader.load(reader.result, (pointCloud) => {
-            // Get number of points
             const numPoints = pointCloud.geometry.attributes.position.count;
-
-            // Calculate bounding box dimensions
             const boundingBox = new THREE.Box3().setFromObject(pointCloud);
             const dimensions = boundingBox.getSize(new THREE.Vector3());
 
             setPointCloudData(pointCloud);
             addLog(`File uploaded: ${file.name}`);
             addLog(`Number of points: ${numPoints.toLocaleString()}`);
-            addLog(`File size: ${fileSizeMB} MB`);
+            addLog(`File size: ${fileSizeString}`);
             addLog(`Bounding box dimensions:`);
             addLog(`  Width: ${dimensions.x.toFixed(2)} units`);
             addLog(`  Height: ${dimensions.y.toFixed(2)} units`);
@@ -78,7 +79,7 @@ const Dashboard = () => {
           setPointCloudData(points);
           addLog(`File uploaded: ${file.name}`);
           addLog(`Number of points: ${points.length.toLocaleString()}`);
-          addLog(`File size: ${fileSizeMB} MB`);
+          addLog(`File size: ${fileSizeString}`);
           addLog(`Bounding box dimensions:`);
           addLog(`  Width: ${(maxX - minX).toFixed(2)} units`);
           addLog(`  Height: ${(maxY - minY).toFixed(2)} units`);
@@ -91,7 +92,7 @@ const Dashboard = () => {
         const data = JSON.parse(reader.result);
         setGeoJsonData(data);
         addLog(`GeoJSON file uploaded: ${file.name}`);
-        addLog(`File size: ${fileSizeMB} MB`);
+        addLog(`File size: ${fileSizeString}`);
       };
       reader.readAsText(file);
     } else {
