@@ -26,7 +26,7 @@ const SideMenu = ({ onUpload, guiContainer }) => {
         margin: "0rem",
       }}
     >
-      <Box>
+      <Box marginTop="20px">
         <Typography
           color={colors.grey[300]}
           fontWeight="bold"
