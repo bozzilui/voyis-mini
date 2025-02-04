@@ -18,7 +18,7 @@ const SideMenu = ({ onUpload, guiContainer }) => {
       style={{
         borderRightStyle: "none",
         backgroundColor: "transparent",
-        width: "250px", // Increased width to accommodate GUI
+        width: "250px",
         height: "100%",
         top: "auto",
         position: "sticky",

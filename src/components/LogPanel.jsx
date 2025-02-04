@@ -28,7 +28,7 @@ const LogPanel = ({ logs }) => {
 
       <Box
         sx={{
-          height: "calc(100% - 60px)", // Subtract header height
+          height: "calc(100% - 60px)",
           overflowY: "auto",
           padding: "0 10px",
         }}

@@ -127,7 +127,7 @@ const GISMap = ({ geoJsonData, addLog, isActive }) => {
     if (isPlaying && timeRange.max) {
       const animate = () => {
         setCurrentTime((time) => {
-          const nextTime = time + 86400000; // Add one day
+          const nextTime = time + 86400000;
           if (nextTime >= timeRange.max) {
             setIsPlaying(false);
             return timeRange.min;
@@ -164,8 +164,8 @@ const GISMap = ({ geoJsonData, addLog, isActive }) => {
         div.style.backgroundColor = "white";
         div.style.padding = "10px";
         div.style.minWidth = "250px";
-        div.style.maxHeight = "80vh"; // Limit height
-        div.style.overflowY = "auto"; // Make scrollable
+        div.style.maxHeight = "80vh";
+        div.style.overflowY = "auto";
         div.style.color = "black";
         div.innerHTML = `
           <div>
@@ -217,7 +217,7 @@ const GISMap = ({ geoJsonData, addLog, isActive }) => {
           label.htmlFor = `tag-${tag}`;
           label.textContent = tag;
           label.style.cursor = "pointer";
-          label.style.color = "black"; // Add this line
+          label.style.color = "black";
 
           container.appendChild(checkbox);
           container.appendChild(label);
@@ -296,7 +296,7 @@ const GISMap = ({ geoJsonData, addLog, isActive }) => {
         label.htmlFor = `tag-${tag}`;
         label.textContent = tag;
         label.style.cursor = "pointer";
-        label.style.color = "black"; // Add this line
+        label.style.color = "black";
 
         container.appendChild(checkbox);
         container.appendChild(label);
